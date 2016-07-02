@@ -39,24 +39,30 @@
     NSString *bodyStr=[NSString stringWithFormat:@"command=ST_L&name=%@&psw=%@",self.nameTextField.text,self.PasswordText.text];
     [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary *infoDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        
-        if ([[infoDic objectForKey:@"result"] isEqualToString:@"0"]) {
-            NSLog(@"%@",infoDic[@"error"]);
-        }else{
-            NSUserDefaults *useDefault=[NSUserDefaults standardUserDefaults];
-            [useDefault setObject:infoDic[@"access_token"] forKey:@"access_token"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSLog(@"%@",dic);
             
-            MyViewController *myView=[[MyViewController alloc]init];
-            self.view.window.rootViewController=myView;
+            NSDictionary *infoDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
+            if ([[infoDic objectForKey:@"result"] isEqualToString:@"0"]) {
+                NSLog(@"%@",infoDic[@"error"]);
+            }else{
+                NSUserDefaults *useDefault=[NSUserDefaults standardUserDefaults];
+                [useDefault setObject:infoDic[@"access_token"] forKey:@"access_token"];
+                
+         
+            }
 
-        }
+        });
         
     }];
+    [task resume];
+   
     
     
 }

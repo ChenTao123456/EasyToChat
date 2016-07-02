@@ -13,8 +13,7 @@
     
     People *people=[[People alloc]init];
     people.name=[Dic objectForKey:@"name"];
-    people.nickName=[Dic objectForKey:@"nickname"];
-    people.email=[Dic objectForKey:@"email"];
+    people.log=[Dic objectForKey:@"email"];
     
     return people;
 }

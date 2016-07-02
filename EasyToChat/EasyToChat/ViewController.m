@@ -24,7 +24,7 @@
     self.navigationController.navigationBarHidden=YES;
     
     img=[[UIImageView alloc]initWithFrame:self.view.frame];
-    img.image=[UIImage imageNamed:@"6"];
+    img.image=[UIImage imageNamed:@"1"];
     [self.view addSubview:img];
     
     [UIView animateWithDuration:1 animations:^{

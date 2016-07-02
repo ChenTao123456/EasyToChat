@@ -14,7 +14,6 @@
 #define  kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define  kScreenHeight [UIScreen mainScreen].bounds.size.height
 @interface MyViewController (){
-    UIImageView *_img;
 }
 
 @end
@@ -26,50 +25,32 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor whiteColor];
     
-    MainViewController *main=[[MainViewController alloc]init];
+ 
     
-    UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:main];
-    
-    FileViewController *file=[[FileViewController alloc]init];
-    UINavigationController *nav2=[[UINavigationController alloc]initWithRootViewController:file];
-    
-    NewViewController *new=[[NewViewController alloc]init];
-    UINavigationController *nav3=[[UINavigationController alloc]initWithRootViewController:new];
-    
-    PersonViewController *person=[[PersonViewController alloc]init];
-    UINavigationController *nav4=[[UINavigationController alloc]initWithRootViewController:person];
-    
-    
-    UITabBarController *tabBar=[[UITabBarController alloc]init];
-    tabBar.viewControllers=@[nav1,nav2,nav3,nav4];
-    UINavigationController *nav11=[[UINavigationController alloc]initWithRootViewController:tabBar];
-    [self.navigationController pushViewController:nav11 animated:YES];
-
     UIView *footView=[[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-50, kScreenWidth, 50)];
     UIImageView *bgimageView=[[UIImageView alloc]initWithFrame:footView.bounds];
     bgimageView.image=[UIImage imageNamed:@"chatinputbg"];
     [self.view addSubview:footView];
     [footView addSubview:bgimageView];
     
-    for (int i=0; i<4; i++) {
+    
+    NSArray *imgArray=@[@"main@2x",@"news@2x",@"file@2x",@"person@2x"];
+    
+    for (int i=0; i<imgArray.count; i++) {
         UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag=i;
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-      
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",imgArray[i]]] forState:UIControlStateNormal];
         
         btn.frame=CGRectMake(i*kScreenWidth/4, 0, kScreenWidth/4, 50);
         [footView addSubview:btn];
         
     }
-   
-    
-    
-    
+
 }
 
 -(void)btnAction:(UIButton *)button{
-    _img.frame=CGRectMake(button.tag*kScreenWidth/5, 0, kScreenWidth/5, 50);
+
     self.selectedIndex=button.tag;
     
 }

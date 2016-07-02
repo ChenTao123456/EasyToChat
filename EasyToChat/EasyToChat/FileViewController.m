@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor greenColor];
+ 
+    self.title=@"文件";
 }
 
 - (void)didReceiveMemoryWarning {

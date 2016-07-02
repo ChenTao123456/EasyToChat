@@ -27,24 +27,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor redColor];
+
+    self.title=@"主页";
     
     peopleArray=[[NSMutableArray alloc]init];
     
     NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
-   NSString *accessToken= [userdefaults valueForKey:@"accessToken"];
+   NSString *accessToken= [userdefaults objectForKey:@"access_token"];
     
-    NSString *url=[NSString stringWithFormat:@"http://IP:Port/st/scommand=ST_FL&access_token=%@",accessToken];
+    NSString *url=[NSString stringWithFormat:@"http://192.168.1.171:8080/st/s?command=ST_FL&access_token=%@",accessToken];
     NSURL *urlStr=[NSURL URLWithString:url];
     NSURLRequest *request=[NSURLRequest requestWithURL:urlStr];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        NSLog(@"====%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
-        
-        peopleArray=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        
-        
+    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
+    NSURLSessionTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"====%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+            
+            peopleArray=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+
+        });
     }];
+    
+    [task resume];
     
     [self.view addSubview:self.tableView];
 }
@@ -62,9 +68,8 @@
     
     NSDictionary *peopleDic=[peopleArray objectAtIndex:indexPath.row];
     
-    People *people=[People getWithDic:peopleDic];
-    cell.textLabel.text=people.nickName;
-    cell.detailTextLabel.text=people.email;
+
+
     
     
     return cell;

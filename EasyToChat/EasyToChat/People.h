@@ -10,8 +10,7 @@
 
 @interface People : NSObject
 @property (nonatomic ,strong)NSString *name;
-@property (nonatomic ,strong)NSString *nickName;
-@property (nonatomic ,strong)NSString *email;
+@property (nonatomic ,strong)NSString *log;
 
 +(People *)getWithDic:(NSDictionary *)Dic;
 @end
