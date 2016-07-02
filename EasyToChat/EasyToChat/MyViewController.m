@@ -7,7 +7,10 @@
 //
 
 #import "MyViewController.h"
-
+#import "MainViewController.h"
+#import "FileViewController.h"
+#import "NewViewController.h"
+#import "PersonViewController.h"
 #define  kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define  kScreenHeight [UIScreen mainScreen].bounds.size.height
 @interface MyViewController (){
@@ -23,6 +26,24 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor=[UIColor whiteColor];
     
+    MainViewController *main=[[MainViewController alloc]init];
+    
+    UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:main];
+    
+    FileViewController *file=[[FileViewController alloc]init];
+    UINavigationController *nav2=[[UINavigationController alloc]initWithRootViewController:file];
+    
+    NewViewController *new=[[NewViewController alloc]init];
+    UINavigationController *nav3=[[UINavigationController alloc]initWithRootViewController:new];
+    
+    PersonViewController *person=[[PersonViewController alloc]init];
+    UINavigationController *nav4=[[UINavigationController alloc]initWithRootViewController:person];
+    
+    
+    UITabBarController *tabBar=[[UITabBarController alloc]init];
+    tabBar.viewControllers=@[nav1,nav2,nav3,nav4];
+    UINavigationController *nav11=[[UINavigationController alloc]initWithRootViewController:tabBar];
+    [self.navigationController pushViewController:nav11 animated:YES];
 
     UIView *footView=[[UIView alloc]initWithFrame:CGRectMake(0, kScreenHeight-50, kScreenWidth, 50)];
     UIImageView *bgimageView=[[UIImageView alloc]initWithFrame:footView.bounds];

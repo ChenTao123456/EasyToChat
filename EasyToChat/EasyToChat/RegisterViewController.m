@@ -31,7 +31,7 @@
 }
 - (IBAction)SureRegister:(UIButton *)sender {
     
-    if ([self.ReNameText.text isEqualToString:@""] ||[self.RepwTextFirld.text isEqualToString:@""] || [self.SureRePassword.text isEqualToString:@""] || [self.nichengTextField.text isEqualToString:@""] ||[self.emailTextField.text isEqualToString:@""]) {
+    if ([self.ReNameText.text isEqualToString:@""] &&[self.RepwTextFirld.text isEqualToString:@""] &&[self.SureRePassword.text isEqualToString:@""] &&[self.nichengTextField.text isEqualToString:@""] &&[self.emailTextField.text isEqualToString:@""]) {
         NSLog(@"用户名或密码或昵称或邮箱不能为空");
     }else if (self.SureRePassword.text !=self.RepwTextFirld.text){
         NSLog(@"您输入的两次密码不一致");
@@ -39,10 +39,8 @@
         NSLog(@"密码太短");
     }else{
         
-        
-        
         NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
-        [request setURL:[NSURL URLWithString:@"http://192.168.1.169:8080/st/s"]];
+        [request setURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/s"]];
         [request setHTTPMethod:@"post"];
         
         NSString *bodyStr=[NSString stringWithFormat:@"command=ST_R&name=%@&psw=%@&nickname=%@&email=%@", self.ReNameText.text,self.RepwTextFirld.text,self.nichengTextField.text,self.emailTextField.text];
@@ -52,7 +50,7 @@
         NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
         NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSUTF8StringEncoding error:nil];
+                NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 NSLog(@"++++++%@",dic);
                 
                 if ([[dic objectForKey:@"result"] isEqualToString:@"1"]) {
@@ -67,12 +65,7 @@
         }];
         
         [task resume];
-     
-        
-      
-        
-        
-        
+ 
     }
  
 }

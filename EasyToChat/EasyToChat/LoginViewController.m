@@ -9,10 +9,7 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "MyViewController.h"
-#import "MainViewController.h"
-#import "FileViewController.h"
-#import "NewViewController.h"
-#import "PersonViewController.h"
+
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordText;
@@ -36,7 +33,7 @@
 }
 
 - (IBAction)loginButton:(UIButton *)sender { NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
-    [request setURL:[NSURL URLWithString:@"http://192.168.1.169:8080/st/s"]];
+    [request setURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/s"]];
     
     [request setHTTPMethod:@"post"];
     NSString *bodyStr=[NSString stringWithFormat:@"command=ST_L&name=%@&psw=%@",self.nameTextField.text,self.PasswordText.text];
@@ -53,25 +50,9 @@
             NSUserDefaults *useDefault=[NSUserDefaults standardUserDefaults];
             [useDefault setObject:infoDic[@"access_token"] forKey:@"access_token"];
             
+            MyViewController *myView=[[MyViewController alloc]init];
+            self.view.window.rootViewController=myView;
             
-            MainViewController *main=[[MainViewController alloc]init];
-            
-            UINavigationController *nav1=[[UINavigationController alloc]initWithRootViewController:main];
-            
-            FileViewController *file=[[FileViewController alloc]init];
-            UINavigationController *nav2=[[UINavigationController alloc]initWithRootViewController:file];
-            
-            NewViewController *new=[[NewViewController alloc]init];
-            UINavigationController *nav3=[[UINavigationController alloc]initWithRootViewController:new];
-            
-            PersonViewController *person=[[PersonViewController alloc]init];
-            UINavigationController *nav4=[[UINavigationController alloc]initWithRootViewController:person];
-            
-            
-            UITabBarController *tabBar=[[UITabBarController alloc]init];
-            tabBar.viewControllers=@[nav1,nav2,nav3,nav4];
-            UINavigationController *nav11=[[UINavigationController alloc]initWithRootViewController:tabBar];
-            [self.navigationController pushViewController:nav11 animated:YES];
 
         }
         
