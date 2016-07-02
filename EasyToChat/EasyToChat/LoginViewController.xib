@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="PasswordText" destination="AVf-xa-EON" id="F3q-HM-avX"/>
+                <outlet property="nameTextField" destination="944-xG-Dsu" id="qfF-S1-mjA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="50q-UL-bkP">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="736" id="ZQl-IC-Vd8"/>
+                        <constraint firstAttribute="width" constant="414" id="tKi-Wl-5Rx"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZQl-IC-Vd8"/>
+                            <exclude reference="tKi-Wl-5Rx"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="ZQl-IC-Vd8"/>
+                            <include reference="tKi-Wl-5Rx"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ5-Hf-TGO">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="登录" backgroundImage="login.png"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="50" y="300" width="325" height="55"/>
+                    </variation>
+                    <connections>
+                        <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="MpE-JS-aJE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDO-3z-MXs">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="还没有账号，去注册" backgroundImage="register.png"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="45" y="396" width="325" height="55"/>
+                    </variation>
+                    <connections>
+                        <action selector="registerButton:" destination="-1" eventType="touchUpInside" id="Xgs-HC-nlG"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="944-xG-Dsu">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="118" y="116" width="179" height="30"/>
+                    </variation>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AVf-xa-EON">
+                    <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="118" y="197" width="179" height="30"/>
+                    </variation>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKs-Jd-DoC">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="51" y="120" width="62" height="21"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF6-dS-Mx7">
+                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="61" y="197" width="42" height="21"/>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="50q-UL-bkP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Njn-d8-P9q"/>
+                <constraint firstAttribute="trailing" secondItem="50q-UL-bkP" secondAttribute="trailing" id="ZUf-J5-A5S"/>
+                <constraint firstAttribute="bottom" secondItem="50q-UL-bkP" secondAttribute="bottom" id="oYx-ib-hfA"/>
+                <constraint firstItem="50q-UL-bkP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="upF-Sq-G7V"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="50q-UL-bkP"/>
+                    <exclude reference="QQ5-Hf-TGO"/>
+                    <exclude reference="uDO-3z-MXs"/>
+                    <exclude reference="944-xG-Dsu"/>
+                    <exclude reference="AVf-xa-EON"/>
+                    <exclude reference="CKs-Jd-DoC"/>
+                    <exclude reference="sF6-dS-Mx7"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Njn-d8-P9q"/>
+                    <exclude reference="ZUf-J5-A5S"/>
+                    <exclude reference="oYx-ib-hfA"/>
+                    <exclude reference="upF-Sq-G7V"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="50q-UL-bkP"/>
+                    <include reference="QQ5-Hf-TGO"/>
+                    <include reference="uDO-3z-MXs"/>
+                    <include reference="944-xG-Dsu"/>
+                    <include reference="AVf-xa-EON"/>
+                    <include reference="CKs-Jd-DoC"/>
+                    <include reference="sF6-dS-Mx7"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Njn-d8-P9q"/>
+                    <include reference="ZUf-J5-A5S"/>
+                    <include reference="oYx-ib-hfA"/>
+                    <include reference="upF-Sq-G7V"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="304" y="432"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login.png" width="560" height="100"/>
+        <image name="loginbg.jpg" width="640" height="1136"/>
+        <image name="register.png" width="560" height="100"/>
+    </resources>
+</document>

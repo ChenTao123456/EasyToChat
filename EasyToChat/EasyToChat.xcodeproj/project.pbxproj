@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0416A78A1D2665BC00AC4AE6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A7891D2665BC00AC4AE6 /* MainViewController.m */; };
+		0416A78D1D2665D100AC4AE6 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A78C1D2665D100AC4AE6 /* NewViewController.m */; };
+		0416A7901D2665DD00AC4AE6 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A78F1D2665DD00AC4AE6 /* FileViewController.m */; };
+		0416A7931D2665E600AC4AE6 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A7921D2665E600AC4AE6 /* PersonViewController.m */; };
+		0416A7961D26661C00AC4AE6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A7951D26661C00AC4AE6 /* MyViewController.m */; };
+		0416A79A1D269C6100AC4AE6 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 0416A7991D269C6100AC4AE6 /* People.m */; };
 		04DAF6101D2621F8005D6880 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF60F1D2621F8005D6880 /* main.m */; };
 		04DAF6131D2621F8005D6880 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6121D2621F8005D6880 /* AppDelegate.m */; };
 		04DAF6161D2621F8005D6880 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6151D2621F8005D6880 /* ViewController.m */; };
@@ -15,6 +21,34 @@
 		04DAF61E1D2621F8005D6880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF61C1D2621F8005D6880 /* LaunchScreen.storyboard */; };
 		04DAF6291D2621F8005D6880 /* EasyToChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6281D2621F8005D6880 /* EasyToChatTests.m */; };
 		04DAF6341D2621F8005D6880 /* EasyToChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6331D2621F8005D6880 /* EasyToChatUITests.m */; };
+		04DAF6981D264D47005D6880 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6811D264D47005D6880 /* 6.png */; };
+		04DAF6991D264D47005D6880 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6821D264D47005D6880 /* bubble.png */; };
+		04DAF69A1D264D47005D6880 /* bubbleSelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6831D264D47005D6880 /* bubbleSelf.png */; };
+		04DAF69B1D264D47005D6880 /* chatinputbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6841D264D47005D6880 /* chatinputbg.png */; };
+		04DAF69C1D264D47005D6880 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6851D264D47005D6880 /* Default-568h@2x.png */; };
+		04DAF69D1D264D47005D6880 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6861D264D47005D6880 /* Default.png */; };
+		04DAF69E1D264D47005D6880 /* download_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6871D264D47005D6880 /* download_button.png */; };
+		04DAF69F1D264D47005D6880 /* download_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6881D264D47005D6880 /* download_button@2x.png */; };
+		04DAF6A01D264D47005D6880 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6891D264D47005D6880 /* 2.png */; };
+		04DAF6A11D264D47005D6880 /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68A1D264D47005D6880 /* 3@2x.png */; };
+		04DAF6A21D264D47005D6880 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68B1D264D47005D6880 /* head.png */; };
+		04DAF6A31D264D47005D6880 /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68C1D264D47005D6880 /* Icon-120.png */; };
+		04DAF6A41D264D47005D6880 /* Icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68D1D264D47005D6880 /* Icon-58.png */; };
+		04DAF6A51D264D47005D6880 /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68E1D264D47005D6880 /* Icon-80.png */; };
+		04DAF6A61D264D47005D6880 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF68F1D264D47005D6880 /* login.png */; };
+		04DAF6A71D264D47005D6880 /* loginbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6901D264D47005D6880 /* loginbg.jpg */; };
+		04DAF6A81D264D47005D6880 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6911D264D47005D6880 /* 0.png */; };
+		04DAF6A91D264D47005D6880 /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6921D264D47005D6880 /* 1@2x.png */; };
+		04DAF6AA1D264D47005D6880 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6931D264D47005D6880 /* 1.png */; };
+		04DAF6AB1D264D47005D6880 /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6941D264D47005D6880 /* 2@2x.png */; };
+		04DAF6AC1D264D47005D6880 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6951D264D47005D6880 /* 3.png */; };
+		04DAF6AD1D264D47005D6880 /* 4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6961D264D47005D6880 /* 4@2x.png */; };
+		04DAF6AE1D264D47005D6880 /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6971D264D47005D6880 /* register.png */; };
+		04DAF6B61D265050005D6880 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6B41D265050005D6880 /* LoginViewController.m */; };
+		04DAF6B71D265050005D6880 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6B51D265050005D6880 /* LoginViewController.xib */; };
+		04DAF6BF1D2654E4005D6880 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAF6BD1D2654E4005D6880 /* RegisterViewController.m */; };
+		04DAF6C01D2654E4005D6880 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DAF6BE1D2654E4005D6880 /* RegisterViewController.xib */; };
+		4221E90AB7EAA966D0BFDCF6 /* libPods-EasyToChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0B862B66D6EE82B034EDC1 /* libPods-EasyToChat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +69,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0416A7881D2665BC00AC4AE6 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0416A7891D2665BC00AC4AE6 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0416A78B1D2665D100AC4AE6 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		0416A78C1D2665D100AC4AE6 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		0416A78E1D2665DD00AC4AE6 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		0416A78F1D2665DD00AC4AE6 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
+		0416A7911D2665E600AC4AE6 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		0416A7921D2665E600AC4AE6 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		0416A7941D26661C00AC4AE6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		0416A7951D26661C00AC4AE6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		0416A7971D268D9D00AC4AE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0416A7981D269C6100AC4AE6 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		0416A7991D269C6100AC4AE6 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		04DAF60B1D2621F8005D6880 /* EasyToChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyToChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAF60F1D2621F8005D6880 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DAF6111D2621F8005D6880 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +98,38 @@
 		04DAF62F1D2621F8005D6880 /* EasyToChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyToChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAF6331D2621F8005D6880 /* EasyToChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyToChatUITests.m; sourceTree = "<group>"; };
 		04DAF6351D2621F8005D6880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DAF6811D264D47005D6880 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		04DAF6821D264D47005D6880 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
+		04DAF6831D264D47005D6880 /* bubbleSelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSelf.png; sourceTree = "<group>"; };
+		04DAF6841D264D47005D6880 /* chatinputbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatinputbg.png; sourceTree = "<group>"; };
+		04DAF6851D264D47005D6880 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		04DAF6861D264D47005D6880 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		04DAF6871D264D47005D6880 /* download_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download_button.png; sourceTree = "<group>"; };
+		04DAF6881D264D47005D6880 /* download_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "download_button@2x.png"; sourceTree = "<group>"; };
+		04DAF6891D264D47005D6880 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		04DAF68A1D264D47005D6880 /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
+		04DAF68B1D264D47005D6880 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
+		04DAF68C1D264D47005D6880 /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		04DAF68D1D264D47005D6880 /* Icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58.png"; sourceTree = "<group>"; };
+		04DAF68E1D264D47005D6880 /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80.png"; sourceTree = "<group>"; };
+		04DAF68F1D264D47005D6880 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		04DAF6901D264D47005D6880 /* loginbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loginbg.jpg; sourceTree = "<group>"; };
+		04DAF6911D264D47005D6880 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		04DAF6921D264D47005D6880 /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		04DAF6931D264D47005D6880 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		04DAF6941D264D47005D6880 /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
+		04DAF6951D264D47005D6880 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		04DAF6961D264D47005D6880 /* 4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4@2x.png"; sourceTree = "<group>"; };
+		04DAF6971D264D47005D6880 /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
+		04DAF6B31D265050005D6880 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		04DAF6B41D265050005D6880 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		04DAF6B51D265050005D6880 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		04DAF6BC1D2654E4005D6880 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		04DAF6BD1D2654E4005D6880 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		04DAF6BE1D2654E4005D6880 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		A4E887C1FDFE6367EF508D4A /* Pods-EasyToChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyToChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyToChat/Pods-EasyToChat.release.xcconfig"; sourceTree = "<group>"; };
+		DF0B862B66D6EE82B034EDC1 /* libPods-EasyToChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyToChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F811FDB3CAAB45A374B96B18 /* Pods-EasyToChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyToChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyToChat/Pods-EasyToChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4221E90AB7EAA966D0BFDCF6 /* libPods-EasyToChat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +158,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0416A7841D26657600AC4AE6 /* 主页 */ = {
+			isa = PBXGroup;
+			children = (
+				0416A7881D2665BC00AC4AE6 /* MainViewController.h */,
+				0416A7891D2665BC00AC4AE6 /* MainViewController.m */,
+				0416A7981D269C6100AC4AE6 /* People.h */,
+				0416A7991D269C6100AC4AE6 /* People.m */,
+			);
+			name = "主页";
+			sourceTree = "<group>";
+		};
+		0416A7851D26659800AC4AE6 /* 新闻 */ = {
+			isa = PBXGroup;
+			children = (
+				0416A78B1D2665D100AC4AE6 /* NewViewController.h */,
+				0416A78C1D2665D100AC4AE6 /* NewViewController.m */,
+			);
+			name = "新闻";
+			sourceTree = "<group>";
+		};
+		0416A7861D2665A100AC4AE6 /* 文件 */ = {
+			isa = PBXGroup;
+			children = (
+				0416A78E1D2665DD00AC4AE6 /* FileViewController.h */,
+				0416A78F1D2665DD00AC4AE6 /* FileViewController.m */,
+			);
+			name = "文件";
+			sourceTree = "<group>";
+		};
+		0416A7871D2665A900AC4AE6 /* 个人 */ = {
+			isa = PBXGroup;
+			children = (
+				0416A7911D2665E600AC4AE6 /* PersonViewController.h */,
+				0416A7921D2665E600AC4AE6 /* PersonViewController.m */,
+			);
+			name = "个人";
+			sourceTree = "<group>";
+		};
 		04DAF6021D2621F8005D6880 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +203,8 @@
 				04DAF6271D2621F8005D6880 /* EasyToChatTests */,
 				04DAF6321D2621F8005D6880 /* EasyToChatUITests */,
 				04DAF60C1D2621F8005D6880 /* Products */,
+				162A1A8B8360F396E3391264 /* Pods */,
+				B428408D2D74F50A1E72EA7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +225,15 @@
 				04DAF6121D2621F8005D6880 /* AppDelegate.m */,
 				04DAF6141D2621F8005D6880 /* ViewController.h */,
 				04DAF6151D2621F8005D6880 /* ViewController.m */,
+				0416A7941D26661C00AC4AE6 /* MyViewController.h */,
+				0416A7951D26661C00AC4AE6 /* MyViewController.m */,
+				0416A7841D26657600AC4AE6 /* 主页 */,
+				0416A7851D26659800AC4AE6 /* 新闻 */,
+				0416A7861D2665A100AC4AE6 /* 文件 */,
+				0416A7871D2665A900AC4AE6 /* 个人 */,
+				04DAF6AF1D264D6C005D6880 /* 登录页面 */,
+				04DAF6B81D2654B8005D6880 /* 注册页面 */,
+				04DAF6801D264D47005D6880 /* resources */,
 				04DAF6171D2621F8005D6880 /* Main.storyboard */,
 				04DAF61A1D2621F8005D6880 /* Assets.xcassets */,
 				04DAF61C1D2621F8005D6880 /* LaunchScreen.storyboard */,
@@ -117,6 +246,7 @@
 		04DAF60E1D2621F8005D6880 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0416A7971D268D9D00AC4AE6 /* PrefixHeader.pch */,
 				04DAF60F1D2621F8005D6880 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -140,6 +270,73 @@
 			path = EasyToChatUITests;
 			sourceTree = "<group>";
 		};
+		04DAF6801D264D47005D6880 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				04DAF6821D264D47005D6880 /* bubble.png */,
+				04DAF6831D264D47005D6880 /* bubbleSelf.png */,
+				04DAF6841D264D47005D6880 /* chatinputbg.png */,
+				04DAF6811D264D47005D6880 /* 6.png */,
+				04DAF6851D264D47005D6880 /* Default-568h@2x.png */,
+				04DAF6861D264D47005D6880 /* Default.png */,
+				04DAF6871D264D47005D6880 /* download_button.png */,
+				04DAF6881D264D47005D6880 /* download_button@2x.png */,
+				04DAF68B1D264D47005D6880 /* head.png */,
+				04DAF68C1D264D47005D6880 /* Icon-120.png */,
+				04DAF68D1D264D47005D6880 /* Icon-58.png */,
+				04DAF68E1D264D47005D6880 /* Icon-80.png */,
+				04DAF68F1D264D47005D6880 /* login.png */,
+				04DAF6901D264D47005D6880 /* loginbg.jpg */,
+				04DAF6911D264D47005D6880 /* 0.png */,
+				04DAF6931D264D47005D6880 /* 1.png */,
+				04DAF6891D264D47005D6880 /* 2.png */,
+				04DAF6951D264D47005D6880 /* 3.png */,
+				04DAF6921D264D47005D6880 /* 1@2x.png */,
+				04DAF6941D264D47005D6880 /* 2@2x.png */,
+				04DAF68A1D264D47005D6880 /* 3@2x.png */,
+				04DAF6961D264D47005D6880 /* 4@2x.png */,
+				04DAF6971D264D47005D6880 /* register.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		04DAF6AF1D264D6C005D6880 /* 登录页面 */ = {
+			isa = PBXGroup;
+			children = (
+				04DAF6B31D265050005D6880 /* LoginViewController.h */,
+				04DAF6B41D265050005D6880 /* LoginViewController.m */,
+				04DAF6B51D265050005D6880 /* LoginViewController.xib */,
+			);
+			name = "登录页面";
+			sourceTree = "<group>";
+		};
+		04DAF6B81D2654B8005D6880 /* 注册页面 */ = {
+			isa = PBXGroup;
+			children = (
+				04DAF6BC1D2654E4005D6880 /* RegisterViewController.h */,
+				04DAF6BD1D2654E4005D6880 /* RegisterViewController.m */,
+				04DAF6BE1D2654E4005D6880 /* RegisterViewController.xib */,
+			);
+			name = "注册页面";
+			sourceTree = "<group>";
+		};
+		162A1A8B8360F396E3391264 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F811FDB3CAAB45A374B96B18 /* Pods-EasyToChat.debug.xcconfig */,
+				A4E887C1FDFE6367EF508D4A /* Pods-EasyToChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B428408D2D74F50A1E72EA7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF0B862B66D6EE82B034EDC1 /* libPods-EasyToChat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +344,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DAF6381D2621F8005D6880 /* Build configuration list for PBXNativeTarget "EasyToChat" */;
 			buildPhases = (
+				D7095FB9FEFC0D40853FA707 /* [CP] Check Pods Manifest.lock */,
 				04DAF6071D2621F8005D6880 /* Sources */,
 				04DAF6081D2621F8005D6880 /* Frameworks */,
 				04DAF6091D2621F8005D6880 /* Resources */,
+				266B8E98AD663371D195C48C /* [CP] Embed Pods Frameworks */,
+				72DB4A4F0F11BA6BDD1D4BCF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,8 +444,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DAF61E1D2621F8005D6880 /* LaunchScreen.storyboard in Resources */,
+				04DAF6A41D264D47005D6880 /* Icon-58.png in Resources */,
+				04DAF69D1D264D47005D6880 /* Default.png in Resources */,
+				04DAF69B1D264D47005D6880 /* chatinputbg.png in Resources */,
+				04DAF6981D264D47005D6880 /* 6.png in Resources */,
+				04DAF6991D264D47005D6880 /* bubble.png in Resources */,
+				04DAF6AE1D264D47005D6880 /* register.png in Resources */,
 				04DAF61B1D2621F8005D6880 /* Assets.xcassets in Resources */,
+				04DAF69F1D264D47005D6880 /* download_button@2x.png in Resources */,
+				04DAF69C1D264D47005D6880 /* Default-568h@2x.png in Resources */,
 				04DAF6191D2621F8005D6880 /* Main.storyboard in Resources */,
+				04DAF6AD1D264D47005D6880 /* 4@2x.png in Resources */,
+				04DAF6A11D264D47005D6880 /* 3@2x.png in Resources */,
+				04DAF69A1D264D47005D6880 /* bubbleSelf.png in Resources */,
+				04DAF6AC1D264D47005D6880 /* 3.png in Resources */,
+				04DAF6AA1D264D47005D6880 /* 1.png in Resources */,
+				04DAF6AB1D264D47005D6880 /* 2@2x.png in Resources */,
+				04DAF6B71D265050005D6880 /* LoginViewController.xib in Resources */,
+				04DAF6A21D264D47005D6880 /* head.png in Resources */,
+				04DAF6A61D264D47005D6880 /* login.png in Resources */,
+				04DAF69E1D264D47005D6880 /* download_button.png in Resources */,
+				04DAF6A91D264D47005D6880 /* 1@2x.png in Resources */,
+				04DAF6A51D264D47005D6880 /* Icon-80.png in Resources */,
+				04DAF6C01D2654E4005D6880 /* RegisterViewController.xib in Resources */,
+				04DAF6A81D264D47005D6880 /* 0.png in Resources */,
+				04DAF6A31D264D47005D6880 /* Icon-120.png in Resources */,
+				04DAF6A71D264D47005D6880 /* loginbg.jpg in Resources */,
+				04DAF6A01D264D47005D6880 /* 2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,13 +490,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		266B8E98AD663371D195C48C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyToChat/Pods-EasyToChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72DB4A4F0F11BA6BDD1D4BCF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyToChat/Pods-EasyToChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7095FB9FEFC0D40853FA707 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04DAF6071D2621F8005D6880 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0416A78D1D2665D100AC4AE6 /* NewViewController.m in Sources */,
+				04DAF6BF1D2654E4005D6880 /* RegisterViewController.m in Sources */,
+				0416A78A1D2665BC00AC4AE6 /* MainViewController.m in Sources */,
+				04DAF6B61D265050005D6880 /* LoginViewController.m in Sources */,
+				0416A7961D26661C00AC4AE6 /* MyViewController.m in Sources */,
+				0416A79A1D269C6100AC4AE6 /* People.m in Sources */,
 				04DAF6161D2621F8005D6880 /* ViewController.m in Sources */,
+				0416A7931D2665E600AC4AE6 /* PersonViewController.m in Sources */,
 				04DAF6131D2621F8005D6880 /* AppDelegate.m in Sources */,
+				0416A7901D2665DD00AC4AE6 /* FileViewController.m in Sources */,
 				04DAF6101D2621F8005D6880 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +634,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyToChat/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -394,6 +676,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyToChat/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -409,6 +692,7 @@
 		};
 		04DAF6391D2621F8005D6880 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F811FDB3CAAB45A374B96B18 /* Pods-EasyToChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EasyToChat/Info.plist;
@@ -420,6 +704,7 @@
 		};
 		04DAF63A1D2621F8005D6880 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E887C1FDFE6367EF508D4A /* Pods-EasyToChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EasyToChat/Info.plist;
@@ -496,6 +781,7 @@
 				04DAF63A1D2621F8005D6880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04DAF63B1D2621F8005D6880 /* Build configuration list for PBXNativeTarget "EasyToChatTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +790,7 @@
 				04DAF63D1D2621F8005D6880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04DAF63E1D2621F8005D6880 /* Build configuration list for PBXNativeTarget "EasyToChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +799,7 @@
 				04DAF6401D2621F8005D6880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
