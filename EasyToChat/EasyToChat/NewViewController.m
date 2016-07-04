@@ -9,10 +9,10 @@
 #import "NewViewController.h"
 #import "OneImgTableViewCell.h"
 #import "ThreeImgTableViewCell.h"
+#import "ResultViewController.h"
 @interface NewViewController ()<UITableViewDataSource,UITableViewDelegate>{
     
     NSArray *dataArray;
-    NSDictionary *dic;
     NSDictionary *ImageDic;
 }
 @property (nonatomic ,strong)UITableView *tableView;
@@ -29,7 +29,7 @@
         [_tableView registerNib:[UINib nibWithNibName:@"OneImgTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
         [_tableView registerNib:[UINib nibWithNibName:@"ThreeImgTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
         
-        _tableView.rowHeight=120;
+        _tableView.rowHeight=150;
     }
     return _tableView;
 }
@@ -40,7 +40,7 @@
     // Do any additional setup after loading the view.
    
     self.title=@"新闻";
-    
+    self.view.backgroundColor=[UIColor whiteColor];
    
     NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/news/news_list.json"]];
 
@@ -67,11 +67,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    dic=[dataArray objectAtIndex:indexPath.row];
-    
-    if ([[dic objectForKey:@"images"]count] ==1) {
+    NSDictionary *dic = dataArray[indexPath.row];
+    if ([[dataArray[indexPath.row] objectForKey:@"images"]count] ==1) {
         
         OneImgTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
         cell.oneLabel.text=[dic objectForKey:@"news_title"];
@@ -79,28 +76,55 @@
         [cell.oneButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
         
         NSArray *array=[dic objectForKey:@"images"];
-        NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]]];
-        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-            NSLog(@"%@",data);
-            cell.OneImg.image=[UIImage imageWithData:data];
-            
-        }];
+        NSURL *img=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        [cell.OneImg sd_setImageWithURL:img];
+
         return cell;
-    }else{
         
+    }else if ([[dataArray[indexPath.row] objectForKey:@"images"]count]==2){
+        ThreeImgTableViewCell *cell1=[tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+        cell1.threeLabel1.text=[dic objectForKey:@"news_title"];
+        [cell1.threeButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
+        NSArray *array=[dic objectForKey:@"images"];
+        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        [cell1.threeImg1 sd_setImageWithURL:img1];
+        
+        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [1] objectForKey:@"url"]]];
+        [cell1.threeImg2 sd_setImageWithURL:img2];
+
+        return cell1;
+        
+    }else{
         ThreeImgTableViewCell *cell1=[tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell1.threeLabel1.text=[dic objectForKey:@"news_title"];
         [cell1.threeButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
         
-//        NSDictionary *imgDic=[dic1 objectForKey:@"images"];
+        NSArray *array=[dic objectForKey:@"images"];
+        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        [cell1.threeImg1 sd_setImageWithURL:img1];
         
+        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [1] objectForKey:@"url"]]];
+        [cell1.threeImg2 sd_setImageWithURL:img2];
+        
+        
+        
+        NSURL *img3=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [2] objectForKey:@"url"]]];
+        [cell1.threeImg3 sd_setImageWithURL:img3];
         return cell1;
+
     }
-    return 0;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    ResultViewController *resultVC=[[ResultViewController alloc]init];
+    resultVC.dataDic=dataArray[indexPath.row];
+    
+    [self.navigationController pushViewController:resultVC animated:YES];
     
     
 }
-
 
 
 

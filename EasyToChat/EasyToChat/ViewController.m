@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-#import <AFNetworking.h>
+
 #import "LoginViewController.h"
 @interface ViewController (){
     UIImageView *img;
@@ -30,7 +29,7 @@
     [UIView animateWithDuration:1 animations:^{
         img.alpha=0.5;
     } completion:^(BOOL finished) {
-        
+      
         [UIView animateWithDuration:1 animations:^{
             
             [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view.window cache:YES];

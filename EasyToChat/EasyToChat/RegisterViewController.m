@@ -39,32 +39,54 @@
         NSLog(@"密码太短");
     }else{
         
-        NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
-        [request setURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/s"]];
-        [request setHTTPMethod:@"post"];
         
-        NSString *bodyStr=[NSString stringWithFormat:@"command=ST_R&name=%@&psw=%@&nickname=%@&email=%@", self.ReNameText.text,self.RepwTextFirld.text,self.nichengTextField.text,self.emailTextField.text];
-        [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
-        NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                NSLog(@"++++++%@",dic);
+        AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes=[manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:[NSSet setWithObjects:@"text/html", nil]];
+       
+        NSDictionary *bodyDic=@{@"command":@"ST_R",@"name":[NSString stringWithFormat:@"%@",self.ReNameText.text],@"psw":[NSString stringWithFormat:@"%@",self.RepwTextFirld.text],@"nickname":[NSString stringWithFormat:@"%@",self.nichengTextField.text],@"email":[NSString stringWithFormat:@"%@",self.emailTextField.text]};
+        [manager POST:@"http://192.168.1.171:8080/st/s" parameters:bodyDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+              NSDictionary *dddd=(NSDictionary *)responseObject;
+            NSLog(@"%@",dddd);
+            
+            if ([[dddd objectForKey:@"result"] isEqualToString:@"1"]) {
                 
-                if ([[dic objectForKey:@"result"] isEqualToString:@"1"]) {
-         
-                    [self.navigationController popViewControllerAnimated:YES];
-                }else{
-                    NSLog(@"注册失败,用户已存在");
-                }
-
-            });
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                NSLog(@"注册失败,用户已存在");
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             
         }];
+
         
-        [task resume];
+//        NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
+//        [request setURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/s"]];
+//        [request setHTTPMethod:@"post"];
+//        
+//        NSString *bodyStr=[NSString stringWithFormat:@"command=ST_R&name=%@&psw=%@&nickname=%@&email=%@", self.ReNameText.text,self.RepwTextFirld.text,self.nichengTextField.text,self.emailTextField.text];
+//        [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
+//        
+//        NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
+//        NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
+//        NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//                NSLog(@"++++++%@",dic);
+//                
+//                if ([[dic objectForKey:@"result"] isEqualToString:@"1"]) {
+//         
+//                    [self.navigationController popViewControllerAnimated:YES];
+//                }else{
+//                    NSLog(@"注册失败,用户已存在");
+//                }
+//
+//            });
+//            
+//        }];
+//        
+//        [task resume];
  
     }
  

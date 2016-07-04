@@ -25,20 +25,20 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPC-0e-T9m">
                         <rect key="frame" x="13" y="14" width="301" height="21"/>
-                        <color key="backgroundColor" red="0.26387881905905808" green="1" blue="0.26731890877144837" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-gL-0oc">
-                        <rect key="frame" x="322" y="14" width="67" height="21"/>
-                        <color key="backgroundColor" red="0.57869783269999997" green="1" blue="0.83222891129999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="322" y="14" width="75" height="21"/>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="threeButton" destination="BZM-gL-0oc" id="Ick-Qh-GCI"/>
-                <outlet property="threeImg1" destination="f64-nD-6rW" id="N4G-8k-rix"/>
+                <outlet property="threeImg1" destination="w41-Lr-cxG" id="4D8-Cd-SLV"/>
+                <outlet property="threeImg2" destination="25n-09-J4Q" id="D2b-o6-GgC"/>
+                <outlet property="threeImg3" destination="f64-nD-6rW" id="Xcs-fh-gff"/>
                 <outlet property="threeLabel1" destination="QPC-0e-T9m" id="Lpe-cz-Deu"/>
             </connections>
             <point key="canvasLocation" x="407.5" y="427.5"/>

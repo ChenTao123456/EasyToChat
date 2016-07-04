@@ -10,6 +10,9 @@
 
 @interface ThreeImgTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *threeImg1;
+@property (weak, nonatomic) IBOutlet UIImageView *threeImg2;
+@property (weak, nonatomic) IBOutlet UIImageView *threeImg3;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *threeLabel1;
 
