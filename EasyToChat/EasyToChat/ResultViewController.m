@@ -47,18 +47,29 @@
     
     NSString *source_url=[self.dataDic objectForKey:@"source_url"];
     
+    NSString *Str=[NSString stringWithFormat:@"http://192.168.1.225:8080%@",source_url];
     
-    
-    NSString *Str=[NSString stringWithFormat:@"http://192.168.1.171:8080%@",source_url];
-    
-    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:Str]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue  mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes=[manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:[NSSet setWithObjects:@"text/plain", nil]];
+    [manager GET:Str parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        [self.view addSubview:self.tableView];
-        dataDic123=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+        NSDictionary *dic=(NSDictionary *)responseObject;
+        NSLog(@"%@",dic);
+         [self.view addSubview:self.tableView];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
+    
+    
+    
+//    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:Str]];
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue  mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        
+//        [self.view addSubview:self.tableView];
+//        dataDic123=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//        NSLog(@"%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+//        
+//    }];
     
 }
 
@@ -100,7 +111,7 @@
             
             NSDictionary *d=[[dataAr objectAtIndex:indexPath.row]objectForKey:@"image"];
             
-            NSURL *urlStr=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[d objectForKey:@"source"]]];
+            NSURL *urlStr=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[d objectForKey:@"source"]]];
             [cell2.TwoIMG sd_setImageWithURL:urlStr];
             
         }else{
@@ -126,14 +137,11 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    
-   
     if (section==1) {
        
         NSDictionary *introDic=[dataDic123 objectForKey:@"info"];
         NSString *introStr=[introDic objectForKey:@"intro"];
-       
-        
+ 
         return introStr;
     }
     return   nil;

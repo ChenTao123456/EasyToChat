@@ -36,38 +36,66 @@
     
 }
 
-- (IBAction)loginButton:(UIButton *)sender { NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
-    [request setURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/s"]];
+- (IBAction)loginButton:(UIButton *)sender {
     
-    [request setHTTPMethod:@"post"];
-    NSString *bodyStr=[NSString stringWithFormat:@"command=ST_L&name=%@&psw=%@",self.nameTextField.text,self.PasswordText.text];
-    [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
+//    NSMutableURLRequest *request=[[NSMutableURLRequest alloc]init];
+//    [request setURL:[NSURL URLWithString:@"http://192.168.1.225:8080/st/s"]];
     
-    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
-    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes=[manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:[NSSet setWithObjects:@"text/html", nil]];
+    NSDictionary *bodyDic=@{@"command":@"ST_L",@"name":[NSString stringWithFormat:@"%@",self.nameTextField.text],@"psw":[NSString stringWithFormat:@"%@",self.PasswordText.text]};
+    
+    [manager POST:@"http://192.168.1.225:8080/st/s" parameters:bodyDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dicc=(NSDictionary *)responseObject;
+        NSLog(@"%@",dicc);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            NSLog(@"%@",dic);
-            
-            NSDictionary *infoDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            
-            if ([[infoDic objectForKey:@"result"] isEqualToString:@"0"]) {
-                NSLog(@"%@",infoDic[@"error"]);
+            if ([[dicc objectForKey:@"result"] isEqualToString:@"0"]) {
+                NSLog(@"%@",dicc[@"error"]);
             }else{
                 NSUserDefaults *useDefault=[NSUserDefaults standardUserDefaults];
-                [useDefault setObject:infoDic[@"access_token"] forKey:@"access_token"];
+                [useDefault setObject:dicc[@"access_token"] forKey:@"access_token"];
                 
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 [self tabBar];
-             });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self tabBar];
+                    
+                });
             }
-
         });
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
-    [task resume];
+    
+    
+//    [request setHTTPMethod:@"post"];
+//    NSString *bodyStr=[NSString stringWithFormat:@"command=ST_L&name=%@&psw=%@",self.nameTextField.text,self.PasswordText.text];
+//    [request setHTTPBody:[bodyStr dataUsingEncoding:NSUTF8StringEncoding]];
+//    
+//    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
+//    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
+//    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//            
+//            NSDictionary *infoDic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//            NSLog(@"%@",infoDic);
+//            
+//            if ([[infoDic objectForKey:@"result"] isEqualToString:@"0"]) {
+//                NSLog(@"%@",infoDic[@"error"]);
+//            }else{
+//                NSUserDefaults *useDefault=[NSUserDefaults standardUserDefaults];
+//                [useDefault setObject:infoDic[@"access_token"] forKey:@"access_token"];
+//                
+//             dispatch_async(dispatch_get_main_queue(), ^{
+//                 [self tabBar];
+//             });
+//            }
+//        });
+//        
+//    }];
+//    [task resume];
 }
 
 - (IBAction)registerButton:(UIButton *)sender {

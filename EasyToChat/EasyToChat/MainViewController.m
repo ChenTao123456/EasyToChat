@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "People.h"
+#import "ChatTableViewCell.h"
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *peopleArray;
 }
@@ -20,7 +21,7 @@
         _tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
         _tableView.delegate=self;
         _tableView.dataSource=self;
-        
+        [_tableView registerNib:[UINib nibWithNibName:@"ChatTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
     }
     return _tableView;
 }
@@ -35,7 +36,7 @@
     NSUserDefaults *userdefaults=[NSUserDefaults standardUserDefaults];
    NSString *accessToken= [userdefaults objectForKey:@"access_token"];
     
-    NSString *url=[NSString stringWithFormat:@"http://192.168.1.171:8080/st/s?command=ST_FL&access_token=%@",accessToken];
+    NSString *url=[NSString stringWithFormat:@"http://192.168.1.225:8080/st/s?command=ST_FL&access_token=%@",accessToken];
     NSURL *urlStr=[NSURL URLWithString:url];
     NSURLRequest *request=[NSURLRequest requestWithURL:urlStr];
     
@@ -43,10 +44,12 @@
     NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
     NSURLSessionTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             NSLog(@"====%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
             
             peopleArray=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
+            NSLog(@"%@",peopleArray);
         });
     }];
     
@@ -60,18 +63,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        
-    }
-    
-    NSDictionary *peopleDic=[peopleArray objectAtIndex:indexPath.row];
+    ChatTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    NSDictionary *dic=[peopleArray objectAtIndex:indexPath.row];
+    cell.MainName.text=[dic objectForKey:@"name"];
+    cell.MainShuoShuo.text=@"说说：其实就是一个心情，时好时坏";
+    cell.MainIMG.image=[UIImage imageNamed:@"head"];
     
 
-
-    
-    
     return cell;
 }
 

@@ -33,6 +33,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="MainIMG" destination="UOd-R3-shT" id="ug3-jj-XYK"/>
+                <outlet property="MainName" destination="LWB-Bc-guO" id="imO-Dk-NE9"/>
+                <outlet property="MainShuoShuo" destination="b6K-0a-dAH" id="l5x-8t-m02"/>
+            </connections>
             <point key="canvasLocation" x="364" y="435.5"/>
         </tableViewCell>
     </objects>

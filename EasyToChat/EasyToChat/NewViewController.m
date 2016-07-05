@@ -42,23 +42,34 @@
     self.title=@"新闻";
     self.view.backgroundColor=[UIColor whiteColor];
    
-    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.171:8080/st/news/news_list.json"]];
-
-    
-    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
-    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"======%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
-            
-            [self.view addSubview:self.tableView];
-            
-            NSDictionary *Dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes=[manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:[NSSet setWithObjects:@"text/plain", nil]];
+    [manager GET:@"http://192.168.1.225:8080/st/news/news_list.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *Dic=(NSDictionary *)responseObject;
+         [self.view addSubview:self.tableView];
         dataArray= [Dic objectForKey:@"news_list"];
-        });
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
     }];
-    [task resume];
+    
+//    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.225:8080/st/news/news_list.json"]];
+//  
+//    NSURLSessionConfiguration *confi=[NSURLSessionConfiguration defaultSessionConfiguration];
+//    NSURLSession *session=[NSURLSession sessionWithConfiguration:confi];
+//    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"======%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+//            
+//            [self.view addSubview:self.tableView];
+//            
+//            NSDictionary *Dic=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//            
+//        dataArray= [Dic objectForKey:@"news_list"];
+//        });
+//    }];
+//    [task resume];
     
 }
 
@@ -76,7 +87,7 @@
         [cell.oneButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
         
         NSArray *array=[dic objectForKey:@"images"];
-        NSURL *img=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        NSURL *img=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [0] objectForKey:@"url"]]];
         [cell.OneImg sd_setImageWithURL:img];
 
         return cell;
@@ -86,10 +97,10 @@
         cell1.threeLabel1.text=[dic objectForKey:@"news_title"];
         [cell1.threeButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
         NSArray *array=[dic objectForKey:@"images"];
-        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [0] objectForKey:@"url"]]];
         [cell1.threeImg1 sd_setImageWithURL:img1];
         
-        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [1] objectForKey:@"url"]]];
+        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [1] objectForKey:@"url"]]];
         [cell1.threeImg2 sd_setImageWithURL:img2];
 
         return cell1;
@@ -100,15 +111,15 @@
         [cell1.threeButton setTitle:[dic objectForKey:@"source"] forState:UIControlStateNormal];
         
         NSArray *array=[dic objectForKey:@"images"];
-        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [0] objectForKey:@"url"]]];
+        NSURL * img1=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [0] objectForKey:@"url"]]];
         [cell1.threeImg1 sd_setImageWithURL:img1];
         
-        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [1] objectForKey:@"url"]]];
+        NSURL *img2=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [1] objectForKey:@"url"]]];
         [cell1.threeImg2 sd_setImageWithURL:img2];
         
         
         
-        NSURL *img3=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.171:8080%@",[array [2] objectForKey:@"url"]]];
+        NSURL *img3=[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.225:8080%@",[array [2] objectForKey:@"url"]]];
         [cell1.threeImg3 sd_setImageWithURL:img3];
         return cell1;
 

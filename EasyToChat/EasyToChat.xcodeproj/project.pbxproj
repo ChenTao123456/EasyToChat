@@ -22,6 +22,8 @@
 		044081F21D2A3A47000636C6 /* ThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044081F01D2A3A47000636C6 /* ThreeTableViewCell.xib */; };
 		044081F61D2A6993000636C6 /* UILabel+AutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 044081F51D2A6993000636C6 /* UILabel+AutoSize.m */; };
 		044081F91D2A80F5000636C6 /* NSString+AutoSizeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 044081F81D2A80F5000636C6 /* NSString+AutoSizeString.m */; };
+		04D4C43F1D2BF28A005AE3D3 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4C43D1D2BF28A005AE3D3 /* CustomCollectionViewCell.m */; };
+		04D4C4401D2BF28A005AE3D3 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D4C43E1D2BF28A005AE3D3 /* CustomCollectionViewCell.xib */; };
 		04DA9F8E1D2760B100AC1E40 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DA9F771D2760B100AC1E40 /* 1.png */; };
 		04DA9F8F1D2760B100AC1E40 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DA9F781D2760B100AC1E40 /* bubble.png */; };
 		04DA9F901D2760B100AC1E40 /* bubbleSelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DA9F791D2760B100AC1E40 /* bubbleSelf.png */; };
@@ -112,6 +114,9 @@
 		044081F51D2A6993000636C6 /* UILabel+AutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AutoSize.m"; sourceTree = "<group>"; };
 		044081F71D2A80F5000636C6 /* NSString+AutoSizeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AutoSizeString.h"; sourceTree = "<group>"; };
 		044081F81D2A80F5000636C6 /* NSString+AutoSizeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AutoSizeString.m"; sourceTree = "<group>"; };
+		04D4C43C1D2BF28A005AE3D3 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		04D4C43D1D2BF28A005AE3D3 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		04D4C43E1D2BF28A005AE3D3 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		04DA9F771D2760B100AC1E40 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		04DA9F781D2760B100AC1E40 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		04DA9F791D2760B100AC1E40 /* bubbleSelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSelf.png; sourceTree = "<group>"; };
@@ -232,6 +237,9 @@
 			children = (
 				0416A78E1D2665DD00AC4AE6 /* FileViewController.h */,
 				0416A78F1D2665DD00AC4AE6 /* FileViewController.m */,
+				04D4C43C1D2BF28A005AE3D3 /* CustomCollectionViewCell.h */,
+				04D4C43D1D2BF28A005AE3D3 /* CustomCollectionViewCell.m */,
+				04D4C43E1D2BF28A005AE3D3 /* CustomCollectionViewCell.xib */,
 			);
 			name = "文件";
 			sourceTree = "<group>";
@@ -527,6 +535,7 @@
 				044081ED1D2A3A3C000636C6 /* TwoTableViewCell.xib in Resources */,
 				044081E21D2A3A16000636C6 /* OneTableViewCell.xib in Resources */,
 				04DA9FB91D27AC7700AC1E40 /* ThreeImgTableViewCell.xib in Resources */,
+				04D4C4401D2BF28A005AE3D3 /* CustomCollectionViewCell.xib in Resources */,
 				04DA9F9A1D2760B100AC1E40 /* Icon-58.png in Resources */,
 				04DA9FA01D2760B100AC1E40 /* news.png in Resources */,
 				04DAF6191D2621F8005D6880 /* Main.storyboard in Resources */,
@@ -638,6 +647,7 @@
 				04DAF6161D2621F8005D6880 /* ViewController.m in Sources */,
 				0416A7931D2665E600AC4AE6 /* PersonViewController.m in Sources */,
 				04DAF6131D2621F8005D6880 /* AppDelegate.m in Sources */,
+				04D4C43F1D2BF28A005AE3D3 /* CustomCollectionViewCell.m in Sources */,
 				0416A7901D2665DD00AC4AE6 /* FileViewController.m in Sources */,
 				04DAF6101D2621F8005D6880 /* main.m in Sources */,
 			);
